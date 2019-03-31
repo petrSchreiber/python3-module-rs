@@ -1,7 +1,7 @@
 # python3-module-rs
 Example of Python 3 module written in Rust.
 
-The code attempts to mirror the [Boost Python example](https://github.com/avast/boost-python-examples/tree/master/boost-python-examples) by Lukáš Kučera.
+The code attempts to cover the same functionality as [Boost Python example](https://github.com/avast/boost-python-examples/tree/master/boost-python-examples) by Lukáš Kučera.
 
 _Currently work in progress_
 
@@ -25,5 +25,13 @@ Then, you can do:
 ```
 import python3_module_rs
 
-print(python3_module_rs.__doc__)
+print(python3_module_rs.__doc__)        # Doc string of the module    
+
+circle = python3_module_rs.Circle(5)    # Instantiating Rust class with parameter
+print(circle.get_area())                
+
+cylinder = python3_module_rs.Cylinder(radius=5, height=6)   # Instantiating Rust class with named parameters
+print(cylinder.get_area())
+
+print(cylinder.get_values_as_dict())    # Returning Dict from method
 ```
